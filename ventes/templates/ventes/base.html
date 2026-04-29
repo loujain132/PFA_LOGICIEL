@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">🚀 Sales Analyzer</div>
+  <div>Accueil | A propos | Aide</div>
+</div>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

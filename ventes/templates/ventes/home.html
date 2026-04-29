@@ -1,0 +1,103 @@
+{% extends 'ventes/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="navbar">
+
+    <div class="logo">
+        🚀 Sales Analyzer
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Accueil</a>
+        <a href="#">À propos</a>
+        <a href="#">Aide</a>
+    </div>
+
+    <button class="account-btn">
+        Mon compte
+    </button>
+
+</div>
+
+<div class="hero">
+
+    <div class="left">
+
+        <div class="badge">
+            📊 Visualise • Analyse • Décide
+        </div>
+
+        <h1>
+            Analyse <br>
+            des <span>ventes</span>
+        </h1>
+
+        <p>
+            Upload ton fichier et découvre des insights puissants
+            sur tes performances.
+        </p>
+
+        <div class="upload-box">
+
+            <div class="upload-icon">
+                ⬆️
+            </div>
+
+            <h2>Dépose ton fichier ici</h2>
+
+            <p class="formats">
+                Formats acceptés : CSV, Excel (.xlsx, .xls), JSON
+            </p>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <input type="file" name="file">
+
+                <button type="submit">
+                    Choisir un fichier
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+        <img src="{% static 'images/robot.png' %}" class="robot">
+    </div>
+
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>📈 Analyse avancée</h3>
+        <p>
+            Des visualisations claires et des indicateurs clés
+            pour comprendre tes ventes.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Rapide & Intelligent</h3>
+        <p>
+            Traitement rapide et détection automatique
+            des tendances importantes.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🔒 Sécurisé & Privé</h3>
+        <p>
+            Tes données restent confidentielles
+            et ne sont jamais partagées.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

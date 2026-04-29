@@ -1,0 +1,32 @@
+{% extends 'ventes/base.html' %}
+
+{% block content %}
+
+<h2>📊 Résultats</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card p-3 shadow">
+            <h4>💰 CA Total</h4>
+            <h2>{{ total }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-3 shadow">
+            <h4>🏆 Meilleur Produit</h4>
+            <h2>{{ best }}</h2>
+        </div>
+    </div>
+</div>
+
+<a href="/download/" class="btn btn-success mt-3">⬇️ Télécharger</a>
+
+<div class="mt-4">
+    {{ table|safe }}
+</div>
+
+<!-- Graph -->
+<img src="{{ chart }}" class="img-fluid mt-4">
+
+{% endblock %}
